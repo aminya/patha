@@ -1,4 +1,4 @@
-import { basename, dirname, extname, join } from "./path"
+import { basename, dirname, extname, join } from "path"
 
 /**
  * Adds a prefix to the start of the name of the given path

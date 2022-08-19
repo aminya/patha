@@ -13,7 +13,7 @@
   "module": "./dist/index.mjs",
   "source": "./src/index.ts",
   "scripts": {
-    "build": "run-s clean build.tsc.esm build.tsc.cjs build.parcel",
+    "build": "run-s clean build.tsc.esm build.parcel",
     "build.parcel": "shx rm -rf dist/index.js* && cross-env NODE_ENV=production parcel build --detailed-report",
     "build.tsc.cjs": "tsc -p ./tsconfig.cjs.json",
     "build.tsc.esm": "tsc -p ./tsconfig.json && cd dist && bash -c 'for f in *.js; do mv $f `basename $f .js`.mjs; done;'",

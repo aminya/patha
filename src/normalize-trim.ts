@@ -1,4 +1,4 @@
-import { normalize, sep } from "./path"
+import { normalize, sep } from "path"
 import escapeRegexp from "escape-string-regexp"
 
 /**

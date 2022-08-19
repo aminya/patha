@@ -14,7 +14,4 @@ export {
   sep,
   toNamespacedPath,
   win32,
-  type ParsedPath,
-  type FormatInputPathObject,
-  type PlatformPath,
 } from "path"

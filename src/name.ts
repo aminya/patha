@@ -1,4 +1,4 @@
-import { basename, extname } from "./path"
+import { basename, extname } from "path"
 
 /**
  * Get the name of the given file path.

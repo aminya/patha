@@ -33,6 +33,7 @@
   },
   "prettier": "prettier-config-atomic",
   "dependencies": {
+    "escape-string-regexp": "^5.0.0",
     "replace-ext": "^2.0.0"
   },
   "devDependencies": {

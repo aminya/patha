@@ -19,7 +19,7 @@ jobs:
           - ubuntu-22.04
           - macos-12
         node:
-          - 12
+          - 14
           - 18
         pnpm:
           - 7

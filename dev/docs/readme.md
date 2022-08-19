@@ -2,6 +2,9 @@
 
 <h1 align="center"><%= projectName %></h1>
 <p>
+  <a href="https://github.com/aminya/file-paths/actions/workflows/CI.yml" target="_blank">
+    <img alt="CI" src="https://github.com/aminya/file-paths/actions/workflows/CI.yml/badge.svg">
+  </a>
 <% if (isProjectOnNpm) { -%>
   <a href="https://www.npmjs.com/package/<%= projectName %>" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/<%= projectName %>.svg">

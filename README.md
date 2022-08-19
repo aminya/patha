@@ -20,6 +20,11 @@
 
 - [Install](#install)
 - [Usage](#usage)
+  - [`addNamePrefix` (function)](#addnameprefix-function)
+  - [`addNameSuffix` (function)](#addnamesuffix-function)
+  - [`normalizeTrim` (function)](#normalizetrim-function)
+  - [`name` (function)](#name-function)
+  - [`removeExt` (function)](#removeext-function)
 - [🤝 Contributing](#contributing)
 
 <!-- /code_chunk_output -->

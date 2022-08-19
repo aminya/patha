@@ -9,7 +9,6 @@ ignorePaths:
   - dist/
   - dev/cpp_vcpkg_project
 words:
-  - posix
   - aarch
   - aminya
   - applellvm
@@ -59,7 +58,9 @@ words:
   - npmrc
   - Opencppcoverage
   - OSSDK
+  - patha
   - pnpm
+  - posix
   - pwsh
   - pypy
   - setupcpp

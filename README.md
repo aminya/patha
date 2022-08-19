@@ -1,9 +1,9 @@
 <!-- Generated via running `pnpm run docs` -->
 
-<h1 align="center">file-paths</h1>
+<h1 align="center">patha</h1>
 <p>
-  <a href="https://github.com/aminya/file-paths/actions/workflows/CI.yml" target="_blank">
-    <img alt="CI" src="https://github.com/aminya/file-paths/actions/workflows/CI.yml/badge.svg">
+  <a href="https://github.com/aminya/patha/actions/workflows/CI.yml" target="_blank">
+    <img alt="CI" src="https://github.com/aminya/patha/actions/workflows/CI.yml/badge.svg">
   </a>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/node-%3E%3D12.x-blue.svg" />
@@ -20,11 +20,6 @@
 
 - [Install](#install)
 - [Usage](#usage)
-  - [`addNamePrefix` (function)](#addnameprefix-function)
-  - [`addNameSuffix` (function)](#addnamesuffix-function)
-  - [`normalizeTrim` (function)](#normalizetrim-function)
-  - [`name` (function)](#name-function)
-  - [`removeExt` (function)](#removeext-function)
 - [🤝 Contributing](#contributing)
 
 <!-- /code_chunk_output -->
@@ -32,14 +27,14 @@
 ## Install
 
 ```sh
-npm install --save file-paths
+npm install --save patha
 ```
 
-`file-paths` is tiny and treeshakable.
+`patha` is tiny and treeshakable.
 
 ## Usage
 
-`file-paths` is a drop-replacement for `path`, which is explained in [the Nodejs documentation](https://nodejs.org/api/path.html).
+`patha` is a drop-replacement for `path`, which is explained in [the Nodejs documentation](https://nodejs.org/api/path.html).
 
 ```js
 import {
@@ -58,13 +53,13 @@ import {
   sep,
   toNamespacedPath,
   win32,
-} from "file-paths"
+} from "patha"
 ```
 
-Additionally, `file-paths` supports the following functions:
+Additionally, `patha` supports the following functions:
 
 ```js
-import { addNamePrefix, addNameSuffix, normalizeTrim, name, removeExt } from "file-paths"
+import { addNamePrefix, addNameSuffix, normalizeTrim, name, removeExt } from "patha"
 ```
 
 <!-- INSERT GENERATED DOCS START -->
@@ -81,7 +76,7 @@ Adds a prefix to the start of the name of the given path
 **returns:** string
 
 ```js
-import { addNamePrefix } from "file-paths"
+import { addNamePrefix } from "patha"
 
 addNamePrefix("path/to/file-name.ext", "new-") // gives "path/to/new-file-name.ext"
 ```
@@ -98,7 +93,7 @@ Adds a suffix to the end of the name of the given path
 **returns:** string
 
 ```js
-import { addNameSuffix } from "file-paths"
+import { addNameSuffix } from "patha"
 
 addNameSuffix("path/to/file-name.ext", "-old") // gives "path/to/file-name-old.ext"
 
@@ -116,7 +111,7 @@ Normalizes the path and removes the trailing slashes.
 **returns:** string
 
 ```js
-import { normalize, normalizeTrim } from "file-paths"
+import { normalize, normalizeTrim } from "patha"
 
 normalizeTrim("/foo/bar//baz/asdf/hello/../") // gives "/foo/bar/baz/asdf"
 
@@ -137,7 +132,7 @@ By default the file extension is included in the returned name. To remove the ex
 **returns:** string
 
 ```js
-import { name } from "file-paths"
+import { name } from "patha"
 
 name("path/to/file.md") // gives "file.md"
 
@@ -155,7 +150,7 @@ Remove a path's extension.
 **returns:** string
 
 ```js
-import { removeExt } from "file-paths"
+import { removeExt } from "patha"
 removeExt("some/dir/file.ext") // gives "some/dir/file"
 ```
 
@@ -168,4 +163,4 @@ You can sponsor my work here:
 https://github.com/sponsors/aminya
 
 Pull requests, issues and feature requests are welcome.
-See the [Contributing guide](https://github.com/aminya/file-paths/blob/master/CONTRIBUTING.md).
+See the [Contributing guide](https://github.com/aminya/patha/blob/master/CONTRIBUTING.md).

@@ -1,8 +1,8 @@
 {
-  "name": "file-paths",
+  "name": "patha",
   "version": "0.1.0",
   "description": "File paths library. All you need to work with paths. drop-in replacement for Nodejs 'path'. Tiny and tree-shakable.",
-  "repository": "https://github.com/aminya/file-paths",
+  "repository": "https://github.com/aminya/patha",
   "license": "Apache-2.0",
   "author": "Amin Yahyaabadi",
   "exports": {
@@ -33,7 +33,7 @@
     "lint.cspell": "cspell lint --no-progress --show-suggestions",
     "lint.eslint": "eslint **/*.{ts,tsx,js,jsx,cjs,mjs,json,yaml} --no-error-on-unmatched-pattern --cache --cache-location ./.cache/eslint/ --fix",
     "lint.prettier": "prettier --write .",
-    "prepare": "run-s build docs",
+    "prepare": "run-s build",
     "test": "run-p --continue-on-error test.lint test.unit test.integration",
     "test.integration": "run-s build && node ./test/integration.mjs && node ./test/integration.js",
     "test.lint": "run-p --aggregate-output --continue-on-error lint.cspell test.lint.eslint test.lint.prettier",

@@ -7,7 +7,7 @@ import escapeRegexp from "escape-string-regexp"
  * @example
  *
  * ```js
- * import { normalize, normalizeTrim } from "file-paths"
+ * import { normalize, normalizeTrim } from "patha"
  *
  * normalizeTrim("/foo/bar//baz/asdf/hello/../") // gives "/foo/bar/baz/asdf"
  *

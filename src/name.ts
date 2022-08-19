@@ -8,7 +8,7 @@ import { basename, extname } from "path"
  * @example
  *
  * ```js
- * import { name } from "file-paths"
+ * import { name } from "patha"
  *
  * name("path/to/file.md") // gives "file.md"
  *

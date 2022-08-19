@@ -6,7 +6,7 @@ import { basename, dirname, extname, join } from "path"
  * @example
  *
  * ```js
- * import { addNamePrefix } from "file-paths"
+ * import { addNamePrefix } from "patha"
  *
  * addNamePrefix("path/to/file-name.ext", "new-") // gives "path/to/new-file-name.ext"
  * ```

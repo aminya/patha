@@ -2,8 +2,8 @@
 
 <h1 align="center"><%= projectName %></h1>
 <p>
-  <a href="https://github.com/aminya/file-paths/actions/workflows/CI.yml" target="_blank">
-    <img alt="CI" src="https://github.com/aminya/file-paths/actions/workflows/CI.yml/badge.svg">
+  <a href="https://github.com/aminya/patha/actions/workflows/CI.yml" target="_blank">
+    <img alt="CI" src="https://github.com/aminya/patha/actions/workflows/CI.yml/badge.svg">
   </a>
 <% if (isProjectOnNpm) { -%>
   <a href="https://www.npmjs.com/package/<%= projectName %>" target="_blank">
@@ -60,11 +60,11 @@
 npm install --save <%= projectName %>
 ```
 
-`file-paths` is tiny and treeshakable.
+`patha` is tiny and treeshakable.
 
 ## Usage
 
-`file-paths` is a drop-replacement for `path`, which is explained in [the Nodejs documentation](https://nodejs.org/api/path.html).
+`patha` is a drop-replacement for `path`, which is explained in [the Nodejs documentation](https://nodejs.org/api/path.html).
 
 ```js
 import {
@@ -83,13 +83,13 @@ import {
   sep,
   toNamespacedPath,
   win32,
-} from "file-paths"
+} from "patha"
 ```
 
-Additionally, `file-paths` supports the following functions:
+Additionally, `patha` supports the following functions:
 
 ```js
-import { addNamePrefix, addNameSuffix, normalizeTrim, name, removeExt } from "file-paths"
+import { addNamePrefix, addNameSuffix, normalizeTrim, name, removeExt } from "patha"
 ```
 
 <!-- INSERT GENERATED DOCS START -->
@@ -103,4 +103,4 @@ You can sponsor my work here:
 https://github.com/sponsors/aminya
 
 Pull requests, issues and feature requests are welcome.
-See the [Contributing guide](https://github.com/aminya/file-paths/blob/master/CONTRIBUTING.md).
+See the [Contributing guide](https://github.com/aminya/patha/blob/master/CONTRIBUTING.md).

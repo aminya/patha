@@ -6,7 +6,7 @@ import { basename, dirname, extname, join } from "path"
  * @example
  *
  * ```js
- * import { addNameSuffix } from "file-paths"
+ * import { addNameSuffix } from "patha"
  *
  * addNameSuffix("path/to/file-name.ext", "-old") // gives "path/to/file-name-old.ext"
  *

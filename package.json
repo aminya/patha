@@ -11,7 +11,7 @@
   },
   "main": "./dist/file-paths.js",
   "module": "./dist/file-paths.mjs",
-  "source": "./src/main.ts",
+  "source": "./src/index.ts",
   "scripts": {
     "build": "shx rm -rf dist/ && shx mkdir ./dist && run-p lint.tsc build.parcel",
     "build.parcel": "cross-env NODE_ENV=production parcel build --detailed-report",

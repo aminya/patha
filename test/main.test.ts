@@ -5,7 +5,7 @@ test("Node path", () => {
 })
 
 test("normalizeTrim", () => {
-  expect(normalizeTrim("foo/bar//baz/asdf/quux/../")).toBe(join("foo", "bar", "baz", "asdf"))
+  expect(normalizeTrim("foo/bar//baz/asdf/hello/../")).toBe(join("foo", "bar", "baz", "asdf"))
 })
 
 test("name", () => {

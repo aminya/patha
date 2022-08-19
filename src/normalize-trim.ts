@@ -9,9 +9,9 @@ import escapeRegexp from "escape-string-regexp"
  * ```js
  * import { normalize, normalizeTrim } from "file-paths"
  *
- * normalizeTrim("/foo/bar//baz/asdf/quux/../") // gives "/foo/bar/baz/asdf"
+ * normalizeTrim("/foo/bar//baz/asdf/hello/../") // gives "/foo/bar/baz/asdf"
  *
- * normalize("/foo/bar//baz/asdf/quux/../") // gives "/foo/bar/baz/asdf/"
+ * normalize("/foo/bar//baz/asdf/hello/../") // gives "/foo/bar/baz/asdf/"
  * ```
  *
  * @param path The given file path

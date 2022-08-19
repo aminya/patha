@@ -1,4 +1,4 @@
-import { name, isAbsolute, join, normalizeTrim, removeExt, replaceExt } from "../src"
+import { name, isAbsolute, join, normalizeTrim, removeExt, replaceExt, addNameSuffix } from "../src"
 
 test("Node path", () => {
   expect(isAbsolute("/home/test1")).toBeTruthy()
@@ -19,4 +19,8 @@ test("replaceExt", () => {
 
 test("removeExt", () => {
   expect(removeExt("some/dir/file.ext")).toBe("some/dir/file")
+})
+
+test("addNameSuffix", () => {
+  expect(addNameSuffix("path/to/file-name.ext", "-old")).toBe(join("path", "to", "file-name-old.ext"))
 })

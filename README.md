@@ -26,6 +26,7 @@
   - [`addNamePrefix` (function)](#addnameprefix-function)
   - [`addNameSuffix` (function)](#addnamesuffix-function)
   - [`addShExt` (function)](#addshext-function)
+  - [`addShRelativePrefix` (function)](#addshrelativeprefix-function)
   - [`name` (function)](#name-function)
   - [`normalizeTrim` (function)](#normalizetrim-function)
   - [`removeExt` (function)](#removeext-function)
@@ -68,7 +69,16 @@ import {
 Additionally, `patha` supports the following functions:
 
 ```js
-import { name, normalizeTrim, addExeExt, addShExt, addNamePrefix, addNameSuffix, removeExt } from "patha"
+import {
+  name,
+  normalizeTrim,
+  addExeExt,
+  addShExt,
+  addNamePrefix,
+  addNameSuffix,
+  addShRelativePrefix,
+  removeExt,
+} from "patha"
 ```
 
 <!-- INSERT GENERATED DOCS START -->
@@ -146,6 +156,16 @@ addShExt("path/to/file-name") // gives "path/to/file-name.cmd" on Windows and "p
 
 addShExt("path/to/file-name", ".bat") // gives "path/to/file-name.bat" on Windows and "path/to/file-name.sh" on others
 ```
+
+### `addShRelativePrefix` (function)
+
+Prefix a `./` for unix shell and nothing for `cmd`.
+
+**Parameters:**
+
+- path (`string`) - The given path
+
+**returns:** string
 
 ### `name` (function)
 

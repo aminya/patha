@@ -9,6 +9,7 @@ import {
   addNamePrefix,
   addExeExt,
   addShExt,
+  addShRelativePrefix,
 } from "../src"
 
 test("Node path", () => {
@@ -55,4 +56,8 @@ test("addShExt", () => {
   expect(addShExt("path/to/file-name", ".bat")).toBe(
     process.platform === "win32" ? "path/to/file-name.bat" : "path/to/file-name.sh"
   )
+})
+
+test("addShRelativePrefix", () => {
+  expect(addShRelativePrefix("file-name")).toBe(process.platform === "win32" ? "file-name" : "./file-name")
 })

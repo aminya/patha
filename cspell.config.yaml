@@ -1,0 +1,84 @@
+version: "0.2"
+files:
+  - "**/*"
+useGitignore: true
+enableGlobDot: true
+ignorePaths:
+  - pnpm-lock.yaml
+  - .git/
+  - dist/
+  - dev/cpp_vcpkg_project
+words:
+  - aarch
+  - aminya
+  - applellvm
+  - bazel
+  - bazelisk
+  - buildtools
+  - caxa
+  - ccache
+  - choco
+  - cmake
+  - copr
+  - CPATH
+  - Cppcheck
+  - CPPFLAGS
+  - cpprc
+  - Cpython
+  - DCMAKE
+  - deps
+  - devel
+  - dyld
+  - eabi
+  - esmodule
+  - execa
+  - ftxui
+  - gcovr
+  - ghes
+  - Graphviz
+  - isci
+  - isroot
+  - kcov
+  - LDFLAGS
+  - lefticus
+  - libbinutils
+  - libdw
+  - libstdc
+  - libtinfo
+  - msbuild
+  - msvc
+  - msvcrt
+  - msys
+  - multilib
+  - mxschmitt
+  - nala
+  - noconfirm
+  - noprogressbar
+  - nothrow
+  - npmrc
+  - Opencppcoverage
+  - OSSDK
+  - pnpm
+  - pwsh
+  - pypy
+  - setupcpp
+  - setx
+  - Syuu
+  - terserrc
+  - tsbuildinfo
+  - ucrt
+  - untildify
+  - vbatts
+  - vcpkg
+  - vcvarsall
+  - visualc
+  - visualcpp
+  - vsversion
+  - xcrun
+  - Yahyaabadi
+ignoreWords: []
+import: []
+dictionaryDefinitions: []
+dictionaries: []
+language: en, en-GB
+allowCompoundWords: true

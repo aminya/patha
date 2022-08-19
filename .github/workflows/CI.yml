@@ -1,0 +1,136 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - main
+      - dev
+
+jobs:
+  Test:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[skip test]') }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - windows-2022
+          - windows-2019
+          - ubuntu-22.04
+          - ubuntu-20.04
+          - ubuntu-18.04
+          - macos-12
+          - macos-11
+        node:
+          - 14 # installed on the images
+        pnpm:
+          - 7
+        cache_reset_counter:
+          - 0
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.pnpm-store
+            D:\.pnpm-store
+          key: "setupcpp-cache-OS:${{ matrix.os }}-node:${{ matrix.node }}-pnpm:${{ matrix.pnpm }}-${{ hashFiles('./.npmrc') }}-deps:${{ hashFiles('./package.json') }}"
+          restore-keys: |
+            "setupcpp-cache-OS:${{ matrix.os }}-"
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ matrix.pnpm }}
+
+      - name: Install and build
+        run: |
+          pnpm install
+
+      # Create self-contained executable that bundles Nodejs
+      - name: Create Executable
+        if: "contains(matrix.os, 'windows-2022') || contains(matrix.os, 'ubuntu-20.04') || contains(matrix.os, 'macos-11')"
+        run: |
+          pnpm run pack.exe
+
+      - name: Upload Executable
+        if: "contains(matrix.os, 'windows-2022') || contains(matrix.os, 'ubuntu-20.04') || contains(matrix.os, 'macos-11')"
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            ./exe
+            ./dist
+          retention-days: 1
+
+      # - name: Setup SSH debugging session
+      #   uses: mxschmitt/action-tmate@v3
+
+      - name: Test
+        if: "!contains(github.event.head_commit.message, '[skip ci test]')"
+        run: |
+          pnpm run test
+        continue-on-error: ${{ contains(matrix.os, 'ubuntu-18.04') }}
+
+  Docker:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[skip docker]') }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-20.04
+        container:
+          - "ubuntu_node.dockerfile"
+          - "ubuntu_20.04_node.dockerfile"
+          - "arch_node.dockerfile"
+          - "fedora_node.dockerfile"
+        node:
+          - 14
+        pnpm:
+          - 6
+        cache_reset_counter:
+          - 0
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.pnpm-store
+            D:\.pnpm-store
+          key: "setupcpp-docker-cache-OS:${{ matrix.os }}-node:${{ matrix.node }}-pnpm:${{ matrix.pnpm }}-${{ hashFiles('./.npmrc') }}-deps:${{ hashFiles('./package.json') }}-${{ matrix.cache_reset_counter }}"
+          restore-keys: |
+            "setupcpp-docker-cache-OS:${{ matrix.os }}"
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ matrix.pnpm }}
+
+      - name: Install and build
+        run: |
+          pnpm install
+
+      - name: Build
+        id: docker_build
+        run: |
+          docker build -f ./dev/docker/${{ matrix.container }} -t setup_cpp .
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true

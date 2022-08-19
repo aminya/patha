@@ -1,0 +1,102 @@
+{
+  "name": "file-paths",
+  "version": "0.1.0",
+  "description": "File paths tools with backwards compatibility with Nodejs path module.",
+  "repository": "https://github.com/aminya/file-paths",
+  "license": "Apache-2.0",
+  "author": "Amin Yahyaabadi",
+  "exports": {
+    "import": "./dist/file-paths.mjs",
+    "require": "./dist/file-paths.js"
+  },
+  "main": "./dist/file-paths.js",
+  "module": "./dist/file-paths.mjs",
+  "source": "./src/main.ts",
+  "scripts": {
+    "build": "shx rm -rf dist/ && shx mkdir ./dist && run-p lint.tsc build.parcel",
+    "build.parcel": "cross-env NODE_ENV=production parcel build --detailed-report",
+    "bump": "ncu -u -x execa,numerous && pnpm update",
+    "clean": "shx rm -rf .parcel-cache dist exe",
+    "dev": "cross-env NODE_ENV=development parcel watch",
+    "format": "run-s lint.prettier",
+    "lint": "run-p --aggregate-output --continue-on-error lint.cspell lint.eslint lint.prettier lint.tsc",
+    "lint.cspell": "cspell lint --no-progress --show-suggestions",
+    "lint.eslint": "eslint **/*.{ts,tsx,js,jsx,cjs,mjs,json,yaml} --no-error-on-unmatched-pattern --cache --cache-location ./.cache/eslint/ --fix",
+    "lint.prettier": "prettier --write .",
+    "lint.tsc": "tsc --noEmit",
+    "prepare": "npm run build",
+    "test": "run-p --continue-on-error test.lint test.unit",
+    "test.lint": "run-p --aggregate-output --continue-on-error lint.cspell test.lint.eslint test.lint.prettier lint.tsc",
+    "test.lint.eslint": "eslint **/*.{ts,tsx,js,jsx,cjs,mjs,json,yaml} --no-error-on-unmatched-pattern --cache --cache-location ./.cache/eslint/",
+    "test.lint.prettier": "prettier . --check",
+    "test.unit": "jest --runInBand"
+  },
+  "prettier": "prettier-config-atomic",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.6.3",
+    "cross-env": "7.0.3",
+    "cspell": "^6.5.0",
+    "eslint": "^8.21.0",
+    "eslint-config-atomic": "^1.18.1",
+    "jest": "^28.1.3",
+    "npm-check-updates": "^16.0.5",
+    "npm-run-all2": "^6.0.1",
+    "parcel": "2.6.2",
+    "prettier": "2.7.1",
+    "prettier-config-atomic": "^3.0.10",
+    "shx": "0.3.4",
+    "terser-config-atomic": "^0.1.1",
+    "ts-jest": "^28.0.7",
+    "ts-readme": "^1.1.3",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=12.x"
+  },
+  "keywords": [
+    "file-path",
+    "path",
+    "file",
+    "prefix",
+    "extension",
+    "fs",
+    "file system",
+    "node-path",
+    "path-extra",
+    "paths",
+    "path-plus"
+  ],
+  "alias": {
+    "electron": false
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint": "^8.21.0",
+      "prettier": "2.7.1",
+      "lru-cache": "7.8.1",
+      "core-js": "*",
+      "babel-eslint": "npm:@babel/eslint-parser"
+    },
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "*"
+      }
+    }
+  },
+  "targets": {
+    "main": {
+      "context": "node",
+      "includeNodeModules": true,
+      "optimize": true,
+      "outputFormat": "commonjs"
+    },
+    "module": {
+      "context": "node",
+      "includeNodeModules": true,
+      "optimize": true,
+      "outputFormat": "esmodule"
+    }
+  }
+}

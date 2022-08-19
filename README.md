@@ -30,7 +30,7 @@
   - [`name` (function)](#name-function)
   - [`normalizeTrim` (function)](#normalizetrim-function)
   - [`removeExt` (function)](#removeext-function)
-  - [`replaceExt` (variable)](#replaceext-variable)
+  - [`replaceExt` (function)](#replaceext-function)
 - [🤝 Contributing](#contributing)
 
 <!-- /code_chunk_output -->
@@ -209,7 +209,7 @@ import { removeExt } from "patha"
 removeExt("some/dir/file.ext") // gives "some/dir/file"
 ```
 
-### `replaceExt` (variable)
+### `replaceExt` (function)
 
 Replaces the extension from path with extension and returns the updated path string.
 
@@ -217,8 +217,10 @@ Does not replace the extension if path is not a string or is empty.
 
 **Parameters:**
 
-- path - The given path
-- extension - The extension to replace
+- path (`string`) - The given path
+- extension (`string`) - The extension to replace
+
+**returns:** any
 
 ```js
 import { replaceExt } from "patha"

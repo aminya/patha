@@ -16,7 +16,7 @@ import replaceExtOrig from "replace-ext"
  * @param path The given path
  * @param extension The extension to replace
  */
-
-export const replaceExt = replaceExtOrig
-
-// TODO replaceExt should not change `/` to `\\` on Windows
+export function replaceExt(path: string, extension: string) {
+  // TODO replaceExt should not change `/` to `\\` on Windows
+  return replaceExtOrig(path, extension)
+}

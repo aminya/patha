@@ -1,4 +1,4 @@
-import { base, isAbsolute, join, normalizeTrim, removeExt, replaceExt } from "../src"
+import { name, isAbsolute, join, normalizeTrim, removeExt, replaceExt } from "../src"
 
 test("Node path", () => {
   expect(isAbsolute("/home/test1")).toBeTruthy()
@@ -8,9 +8,9 @@ test("normalizeTrim", () => {
   expect(normalizeTrim("foo/bar//baz/asdf/quux/../")).toBe(join("foo", "bar", "baz", "asdf"))
 })
 
-test("base", () => {
-  expect(base("path/to/file.md")).toBe("file.md")
-  expect(base("path/to/file.md", false)).toBe("file")
+test("name", () => {
+  expect(name("path/to/file.md")).toBe("file.md")
+  expect(name("path/to/file.md", false)).toBe("file")
 })
 
 test("replaceExt", () => {

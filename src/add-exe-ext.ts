@@ -11,11 +11,11 @@
  *
  * @param name The name you want to add the shell extension to
  * @param win_ext Defaults to `.exe` on Windows
- * @param unix_ext Defaults to `""` On other platforms.
+ * @param other_ext Defaults to `""` On other platforms.
  */
-export function addExeExt(name: string, win_ext = ".exe", unix_ext = "") {
+export function addExeExt(name: string, win_ext = ".exe", other_ext = "") {
   if (process.platform === "win32") {
     return `${name}${win_ext}`
   }
-  return `${name}${unix_ext}`
+  return `${name}${other_ext}`
 }

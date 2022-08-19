@@ -22,9 +22,10 @@
 
 - [Install](#install)
 - [Usage](#usage)
-  - [`addExeExt` (function)](#addExeExt-function)
+  - [`addExeExt` (function)](#addexeext-function)
   - [`addNamePrefix` (function)](#addnameprefix-function)
   - [`addNameSuffix` (function)](#addnamesuffix-function)
+  - [`addShExt` (function)](#addshext-function)
   - [`name` (function)](#name-function)
   - [`normalizeTrim` (function)](#normalizetrim-function)
   - [`removeExt` (function)](#removeext-function)
@@ -67,7 +68,7 @@ import {
 Additionally, `patha` supports the following functions:
 
 ```js
-import { addExeExt, addNamePrefix, addNameSuffix, normalizeTrim, name, removeExt } from "patha"
+import { name, normalizeTrim, addExeExt, addShExt, addNamePrefix, addNameSuffix, removeExt } from "patha"
 ```
 
 <!-- INSERT GENERATED DOCS START -->
@@ -79,10 +80,16 @@ Add bin extension to the given binary name.
 **Parameters:**
 
 - name (`string`) - The name you want to add the shell extension to
-- win_ext (`string`) - `.exe` on Windows
-- unix_ext (`string`) - `""` On unix.
+- win_ext (`string`) - Defaults to `.exe` on Windows
+- other_ext (`string`) - Defaults to `""` On other platforms.
 
 **returns:** string
+
+```js
+import { addExeExt } from "patha"
+
+addExeExt("path/to/file-name") // gives "path/to/file-name.exe" on Windows and "path/to/file-name" on others
+```
 
 ### `addNamePrefix` (function)
 
@@ -118,6 +125,26 @@ import { addNameSuffix } from "patha"
 addNameSuffix("path/to/file-name.ext", "-old") // gives "path/to/file-name-old.ext"
 
 addNameSuffix("path/to/file-name.ext", ".test") // gives "path/to/file-name.test.ext"
+```
+
+### `addShExt` (function)
+
+Add a native shell extension to the given name.
+
+**Parameters:**
+
+- name (`string`) - The name you want to add the shell extension to
+- win_ext (`string`) - `.cmd` on Windows
+- other_ext (`string`) - `.sh` On others.
+
+**returns:** string
+
+```js
+import { addShExt } from "patha"
+
+addShExt("path/to/file-name") // gives "path/to/file-name.cmd" on Windows and "path/to/file-name.sh" on others
+
+addShExt("path/to/file-name", ".bat") // gives "path/to/file-name.bat" on Windows and "path/to/file-name.sh" on others
 ```
 
 ### `name` (function)

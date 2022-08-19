@@ -89,7 +89,7 @@ import {
 Additionally, `patha` supports the following functions:
 
 ```js
-import { addExeExt, addNamePrefix, addNameSuffix, normalizeTrim, name, removeExt } from "patha"
+import { name, normalizeTrim, addExeExt, addShExt, addNamePrefix, addNameSuffix, removeExt } from "patha"
 ```
 
 <!-- INSERT GENERATED DOCS START -->

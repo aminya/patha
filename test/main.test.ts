@@ -8,6 +8,7 @@ import {
   addNameSuffix,
   addNamePrefix,
   addExeExt,
+  addShExt,
 } from "../src"
 
 test("Node path", () => {
@@ -44,5 +45,14 @@ test("addNamePrefix", () => {
 test("addExeExt", () => {
   expect(addExeExt("path/to/file-name")).toBe(
     process.platform === "win32" ? "path/to/file-name.exe" : "path/to/file-name"
+  )
+})
+
+test("addShExt", () => {
+  expect(addShExt("path/to/file-name")).toBe(
+    process.platform === "win32" ? "path/to/file-name.cmd" : "path/to/file-name.sh"
+  )
+  expect(addShExt("path/to/file-name", ".bat")).toBe(
+    process.platform === "win32" ? "path/to/file-name.bat" : "path/to/file-name.sh"
   )
 })

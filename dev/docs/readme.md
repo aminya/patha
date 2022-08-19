@@ -62,7 +62,33 @@ npm install --save <%= projectName %>
 
 ## Usage
 
-`file-paths` is a drop-replacement for `path`. In addition to all the functions explained in [the Nodejs documentation](https://nodejs.org/api/path.html), `file-paths` supports the following functions:
+`file-paths` is a drop-replacement for `path`, which is explained in [the Nodejs documentation](https://nodejs.org/api/path.html).
+
+```js
+import {
+  basename,
+  delimiter,
+  dirname,
+  extname,
+  format,
+  isAbsolute,
+  join,
+  normalize,
+  parse,
+  posix,
+  relative,
+  resolve,
+  sep,
+  toNamespacedPath,
+  win32,
+} from "file-paths"
+```
+
+Additionally, `file-paths` supports the following functions:
+
+```js
+import { addNamePrefix, addNameSuffix, normalizeTrim, name, removeExt } from "file-paths"
+```
 
 <!-- INSERT GENERATED DOCS START -->
 

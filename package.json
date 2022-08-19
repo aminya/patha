@@ -1,7 +1,7 @@
 {
   "name": "file-paths",
   "version": "0.1.0",
-  "description": "File paths library. All you need to work with paths. Drop-in replacement for Nodejs 'path'.",
+  "description": "File paths library. All you need to work with paths. drop-in replacement for Nodejs 'path'. Tiny and tree-shakable.",
   "repository": "https://github.com/aminya/file-paths",
   "license": "Apache-2.0",
   "author": "Amin Yahyaabadi",
@@ -12,6 +12,13 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "source": "./src/index.ts",
+  "files": [
+    "dist/",
+    "src/",
+    "tsconfig.json",
+    "dev/tsc-mjs.mjs",
+    "LICENSE_dependencies.txt"
+  ],
   "scripts": {
     "build": "run-s clean build.tsc.esm build.parcel",
     "build.parcel": "shx rm -rf dist/index.js* && cross-env NODE_ENV=production parcel build --detailed-report",

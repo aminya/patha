@@ -60,6 +60,8 @@
 npm install --save <%= projectName %>
 ```
 
+`file-paths` is tiny and treeshakable.
+
 ## Usage
 
 `file-paths` is a drop-replacement for `path`, which is explained in [the Nodejs documentation](https://nodejs.org/api/path.html).

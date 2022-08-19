@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> File paths library. All you need to work with paths. Drop-in replacement for Nodejs 'path'.
+> File paths library. All you need to work with paths. drop-in replacement for Nodejs 'path'. Tiny and tree-shakable.
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -34,6 +34,8 @@
 ```sh
 npm install --save file-paths
 ```
+
+`file-paths` is tiny and treeshakable.
 
 ## Usage
 

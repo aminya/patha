@@ -5,7 +5,9 @@
   <a href="https://github.com/aminya/patha/actions/workflows/CI.yml" target="_blank">
     <img alt="CI" src="https://github.com/aminya/patha/actions/workflows/CI.yml/badge.svg">
   </a>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://www.npmjs.com/package/patha" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/patha.svg">
+  </a>
   <img src="https://img.shields.io/badge/node-%3E%3D12.x-blue.svg" />
   <a href="#" target="_blank">
     <img alt="License: Apache--2.0" src="https://img.shields.io/badge/License-Apache--2.0-yellow.svg" />
@@ -20,11 +22,15 @@
 
 - [Install](#install)
 - [Usage](#usage)
+  - [`addExeExt` (function)](#addexeext-function)
   - [`addNamePrefix` (function)](#addnameprefix-function)
   - [`addNameSuffix` (function)](#addnamesuffix-function)
-  - [`normalizeTrim` (function)](#normalizetrim-function)
+  - [`addShExt` (function)](#addshext-function)
+  - [`addShRelativePrefix` (function)](#addshrelativeprefix-function)
   - [`name` (function)](#name-function)
+  - [`normalizeTrim` (function)](#normalizetrim-function)
   - [`removeExt` (function)](#removeext-function)
+  - [`replaceExt` (variable)](#replaceext-variable)
 - [🤝 Contributing](#contributing)
 
 <!-- /code_chunk_output -->
@@ -64,10 +70,37 @@ import {
 Additionally, `patha` supports the following functions:
 
 ```js
-import { addNamePrefix, addNameSuffix, normalizeTrim, name, removeExt } from "patha"
+import {
+  name,
+  normalizeTrim,
+  addExeExt,
+  addShExt,
+  addNamePrefix,
+  addNameSuffix,
+  addShRelativePrefix,
+  removeExt,
+} from "patha"
 ```
 
 <!-- INSERT GENERATED DOCS START -->
+
+### `addExeExt` (function)
+
+Add bin extension to the given binary name.
+
+**Parameters:**
+
+- name (`string`) - The name you want to add the shell extension to
+- win_ext (`string`) - Defaults to `.exe` on Windows
+- other_ext (`string`) - Defaults to `""` On other platforms.
+
+**returns:** string
+
+```js
+import { addExeExt } from "patha"
+
+addExeExt("path/to/file-name") // gives "path/to/file-name.exe" on Windows and "path/to/file-name" on others
+```
 
 ### `addNamePrefix` (function)
 
@@ -105,23 +138,35 @@ addNameSuffix("path/to/file-name.ext", "-old") // gives "path/to/file-name-old.e
 addNameSuffix("path/to/file-name.ext", ".test") // gives "path/to/file-name.test.ext"
 ```
 
-### `normalizeTrim` (function)
+### `addShExt` (function)
 
-Normalizes the path and removes the trailing slashes.
+Add a native shell extension to the given name.
 
 **Parameters:**
 
-- path (`string`) - The given file path
+- name (`string`) - The name you want to add the shell extension to
+- win_ext (`string`) - `.cmd` on Windows
+- other_ext (`string`) - `.sh` On others.
 
 **returns:** string
 
 ```js
-import { normalize, normalizeTrim } from "patha"
+import { addShExt } from "patha"
 
-normalizeTrim("/foo/bar//baz/asdf/hello/../") // gives "/foo/bar/baz/asdf"
+addShExt("path/to/file-name") // gives "path/to/file-name.cmd" on Windows and "path/to/file-name.sh" on others
 
-normalize("/foo/bar//baz/asdf/hello/../") // gives "/foo/bar/baz/asdf/"
+addShExt("path/to/file-name", ".bat") // gives "path/to/file-name.bat" on Windows and "path/to/file-name.sh" on others
 ```
+
+### `addShRelativePrefix` (function)
+
+Prefix a `./` for unix shell and nothing for `cmd`.
+
+**Parameters:**
+
+- path (`string`) - The given path
+
+**returns:** string
 
 ### `name` (function)
 
@@ -144,6 +189,24 @@ name("path/to/file.md") // gives "file.md"
 name("path/to/file.md", false) // gives "file"
 ```
 
+### `normalizeTrim` (function)
+
+Normalizes the path and removes the trailing slashes.
+
+**Parameters:**
+
+- path (`string`) - The given file path
+
+**returns:** string
+
+```js
+import { normalize, normalizeTrim } from "patha"
+
+normalizeTrim("/foo/bar//baz/asdf/hello/../") // gives "/foo/bar/baz/asdf"
+
+normalize("/foo/bar//baz/asdf/hello/../") // gives "/foo/bar/baz/asdf/"
+```
+
 ### `removeExt` (function)
 
 Remove a path's extension.
@@ -157,6 +220,23 @@ Remove a path's extension.
 ```js
 import { removeExt } from "patha"
 removeExt("some/dir/file.ext") // gives "some/dir/file"
+```
+
+### `replaceExt` (variable)
+
+Replaces the extension from path with extension and returns the updated path string.
+
+Does not replace the extension if path is not a string or is empty.
+
+**Parameters:**
+
+- path - The given path
+- extension - The extension to replace
+
+```js
+import { replaceExt } from "patha"
+
+replaceExt("path/to/file.md", ".html") // gives "path/to/file.html"
 ```
 
 <!-- INSERT GENERATED DOCS END -->

@@ -9,6 +9,7 @@ ignorePaths:
   - dist/
   - dev/cpp_vcpkg_project
 words:
+  - addShExt
   - aarch
   - aminya
   - applellvm

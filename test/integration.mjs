@@ -1,4 +1,4 @@
-// eslint-disable import/no-unresolved
+/* eslint-disable import/no-unresolved */
 
 import { name } from "../dist/index.mjs"
 import { normalizeTrim } from "../dist/normalize-trim.mjs"

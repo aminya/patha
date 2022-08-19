@@ -14,6 +14,21 @@
 
 > File paths library. All you need to work with paths. Drop-in replacement for Nodejs 'path'.
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Install](#install)
+- [Usage](#usage)
+  - [`addNamePrefix` (function)](#addnameprefix-function)
+  - [`addNameSuffix` (function)](#addnamesuffix-function)
+  - [`normalizeTrim` (function)](#normalizetrim-function)
+  - [`name` (function)](#name-function)
+  - [`removeExt` (function)](#removeext-function)
+- [🤝 Contributing](#contributing)
+
+<!-- /code_chunk_output -->
+
 ## Install
 
 ```sh
@@ -21,6 +36,8 @@ npm install --save file-paths
 ```
 
 ## Usage
+
+`file-paths` is a drop-replacement for `path`. In addition to all the functions explained in [the Nodejs documentation](https://nodejs.org/api/path.html), `file-paths` supports the following functions:
 
 <!-- INSERT GENERATED DOCS START -->
 

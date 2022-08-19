@@ -44,6 +44,16 @@
 > <%= projectDescription %>
 > <% } -%>
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Install](#install)
+- [Usage](#usage)
+- [🤝 Contributing](#contributing)
+
+<!-- /code_chunk_output -->
+
 ## Install
 
 ```sh
@@ -51,6 +61,8 @@ npm install --save <%= projectName %>
 ```
 
 ## Usage
+
+`file-paths` is a drop-replacement for `path`. In addition to all the functions explained in [the Nodejs documentation](https://nodejs.org/api/path.html), `file-paths` supports the following functions:
 
 <!-- INSERT GENERATED DOCS START -->
 

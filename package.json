@@ -27,7 +27,7 @@
     "bump": "ncu -u -x execa,numerous && pnpm update",
     "clean": "shx rm -rf dist && shx mkdir ./dist",
     "dev": "cross-env NODE_ENV=development parcel watch",
-    "docs": "shx rm -rf ./README.md && pnpm exec readme --path ./dev/docs/readme.md -y && pnpm exec ts-readme && pnpm run format",
+    "docs": "shx rm -rf ./README.md && pnpm exec readme --path ./dev/docs/readme.md -y && pnpm exec ts-readme --header-depth 3 && pnpm run format",
     "format": "run-s lint.prettier",
     "lint": "run-p --aggregate-output --continue-on-error lint.cspell lint.eslint lint.prettier",
     "lint.cspell": "cspell lint --no-progress --show-suggestions",

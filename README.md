@@ -30,6 +30,7 @@
   - [`name` (function)](#name-function)
   - [`normalizeTrim` (function)](#normalizetrim-function)
   - [`removeExt` (function)](#removeext-function)
+  - [`replaceExt` (variable)](#replaceext-variable)
 - [🤝 Contributing](#contributing)
 
 <!-- /code_chunk_output -->
@@ -219,6 +220,23 @@ Remove a path's extension.
 ```js
 import { removeExt } from "patha"
 removeExt("some/dir/file.ext") // gives "some/dir/file"
+```
+
+### `replaceExt` (variable)
+
+Replaces the extension from path with extension and returns the updated path string.
+
+Does not replace the extension if path is not a string or is empty.
+
+**Parameters:**
+
+- path - The given path
+- extension - The extension to replace
+
+```js
+import { replaceExt } from "patha"
+
+replaceExt("path/to/file.md", ".html") // gives "path/to/file.html"
 ```
 
 <!-- INSERT GENERATED DOCS END -->

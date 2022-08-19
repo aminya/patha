@@ -14,7 +14,7 @@
   "source": "./src/index.ts",
   "scripts": {
     "build": "shx rm -rf dist/ && shx mkdir ./dist && run-s build.tsc build.parcel",
-    "build.parcel": "cross-env NODE_ENV=production parcel build --detailed-report",
+    "build.parcel": "shx rm -rf dist/index.js* && cross-env NODE_ENV=production parcel build --detailed-report",
     "build.tsc": "tsc",
     "bump": "ncu -u -x execa,numerous && pnpm update",
     "clean": "shx rm -rf .parcel-cache dist exe",
@@ -26,7 +26,8 @@
     "lint.eslint": "eslint **/*.{ts,tsx,js,jsx,cjs,mjs,json,yaml} --no-error-on-unmatched-pattern --cache --cache-location ./.cache/eslint/ --fix",
     "lint.prettier": "prettier --write .",
     "prepare": "run-s build docs",
-    "test": "run-p --continue-on-error test.lint test.unit",
+    "test": "run-p --continue-on-error test.lint test.unit test.integration",
+    "test.integration": "run-s build && node ./test/integration.mjs && node ./test/integration.js",
     "test.lint": "run-p --aggregate-output --continue-on-error lint.cspell test.lint.eslint test.lint.prettier",
     "test.lint.eslint": "eslint **/*.{ts,tsx,js,jsx,cjs,mjs,json,yaml} --no-error-on-unmatched-pattern --cache --cache-location ./.cache/eslint/",
     "test.lint.prettier": "prettier . --check",

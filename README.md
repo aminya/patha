@@ -155,6 +155,12 @@ Prefix a `./` for unix shell and nothing for `cmd`.
 
 **returns:** string
 
+```js
+import { addShRelativePrefix } from "patha"
+
+addShRelativePrefix("some/file-name") // gives "some/file-name" on Windows and "./some/file-name" on others.
+```
+
 ### `name` (function)
 
 Get the name of the given file path.
@@ -206,6 +212,7 @@ Remove a path's extension.
 
 ```js
 import { removeExt } from "patha"
+
 removeExt("some/dir/file.ext") // gives "some/dir/file"
 ```
 

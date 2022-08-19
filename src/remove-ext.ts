@@ -7,6 +7,7 @@ import { extname } from "path"
  *
  * ```js
  * import { removeExt } from "patha"
+ *
  * removeExt("some/dir/file.ext") // gives "some/dir/file"
  * ```
  *

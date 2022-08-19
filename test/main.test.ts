@@ -1,4 +1,14 @@
-import { name, isAbsolute, join, normalizeTrim, removeExt, replaceExt, addNameSuffix, addNamePrefix } from "../src"
+import {
+  name,
+  isAbsolute,
+  join,
+  normalizeTrim,
+  removeExt,
+  replaceExt,
+  addNameSuffix,
+  addNamePrefix,
+  addExeExt,
+} from "../src"
 
 test("Node path", () => {
   expect(isAbsolute("/home/test1")).toBeTruthy()
@@ -29,4 +39,10 @@ test("addNameSuffix", () => {
 
 test("addNamePrefix", () => {
   expect(addNamePrefix("path/to/file-name.ext", "new-")).toBe(join("path", "to", "new-file-name.ext"))
+})
+
+test("addExeExt", () => {
+  expect(addExeExt("path/to/file-name")).toBe(
+    process.platform === "win32" ? "path/to/file-name.exe" : "path/to/file-name"
+  )
 })

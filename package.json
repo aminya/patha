@@ -1,6 +1,6 @@
 {
   "name": "patha",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "File paths library. All you need to work with paths. drop-in replacement for Nodejs 'path'. Tiny and tree-shakable.",
   "repository": "https://github.com/aminya/patha",
   "license": "Apache-2.0",

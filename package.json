@@ -7,12 +7,62 @@
   "license": "Apache-2.0",
   "author": "Amin Yahyaabadi",
   "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.js"
+    "import": "./dist/node/index.mjs",
+    "require": "./dist/node/index.js"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/node/index.js",
+  "module": "./dist/node/index.mjs",
+  "main.browser": "./dist/browser/index.js",
+  "module.browser": "./dist/browser/index.mjs",
+  "main.deno": "./dist/deno/index.js",
+  "module.deno": "./dist/deno/index.mjs",
   "source": "./src/index.ts",
+  "browser": {
+    "path": "./node_modules/path-browserify",
+    "process": "./node_modules/process"
+  },
+  "targets": {
+    "main": {
+      "context": "node",
+      "engines": {
+        "node": ">=12.x"
+      },
+      "optimize": true,
+      "includeNodeModules": true,
+      "outputFormat": "commonjs",
+      "isLibrary": false
+    },
+    "module": {
+      "context": "node",
+      "engines": {
+        "node": ">=16.x"
+      },
+      "optimize": true,
+      "includeNodeModules": true,
+      "outputFormat": "esmodule",
+      "isLibrary": false
+    },
+    "main.browser": {
+      "context": "browser",
+      "engines": {
+        "browsers": "> 0.5%"
+      },
+      "optimize": true,
+      "includeNodeModules": true,
+      "outputFormat": "global",
+      "isLibrary": true
+    },
+    "module.browser": {
+      "context": "browser",
+      "engines": {
+        "browsers": "last 2 versions"
+      },
+      "optimize": true,
+      "includeNodeModules": true,
+      "outputFormat": "esmodule",
+      "isLibrary": true
+    }
+  },
   "files": [
     "dist/",
     "src/",
@@ -22,11 +72,11 @@
   ],
   "scripts": {
     "build": "run-s clean build.tsc.esm build.parcel",
-    "build.parcel": "shx rm -rf dist/index.js* && cross-env NODE_ENV=production parcel build --detailed-report",
+    "build.parcel": "shx rm -rf dist/node/index.js* && cross-env NODE_ENV=production parcel build --target main --target module --target main.browser --target module.browser && cp -r ./dist/browser/*.mjs* ./dist/deno",
     "build.tsc.cjs": "tsc -p ./tsconfig.cjs.json",
     "build.tsc.esm": "tsc -p ./tsconfig.json && node ./dev/tsc-mjs.mjs",
     "bump": "ncu -u -x execa,numerous && pnpm update",
-    "clean": "shx rm -rf dist && shx mkdir ./dist",
+    "clean": "shx rm -rf dist && shx mkdir ./dist && shx mkdir ./dist/deno",
     "dev": "cross-env NODE_ENV=development parcel watch",
     "docs": "shx rm -rf ./README.md && pnpm exec readme --path ./dev/docs/readme.md -y && pnpm exec ts-readme --header-depth 3 && pnpm run format",
     "format": "run-s lint.prettier",
@@ -36,7 +86,7 @@
     "lint.prettier": "prettier --write .",
     "prepare": "run-s build",
     "test": "run-p --continue-on-error test.lint test.unit test.integration",
-    "test.integration": "run-s build && node ./test/integration.mjs && node ./test/integration.js",
+    "test.integration": "run-s build && node ./test/node-integration.mjs && node ./test/node-integration.js && deno run ./test/deno-integration.ts",
     "test.lint": "run-p --aggregate-output --continue-on-error lint.cspell test.lint.eslint test.lint.prettier",
     "test.lint.eslint": "eslint **/*.{ts,tsx,js,jsx,cjs,mjs,json,yaml} --no-error-on-unmatched-pattern --cache --cache-location ./.cache/eslint/",
     "test.lint.prettier": "prettier . --check",
@@ -68,10 +118,9 @@
   },
   "optionalDependencies": {
     "@types/node": "^18.6.3",
-    "@types/replace-ext": "^2.0.0"
-  },
-  "engines": {
-    "node": ">=12.x"
+    "@types/replace-ext": "^2.0.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10"
   },
   "keywords": [
     "file-path",
@@ -86,9 +135,6 @@
     "paths",
     "path-plus"
   ],
-  "alias": {
-    "electron": false
-  },
   "pnpm": {
     "overrides": {
       "eslint": "^8.21.0",
@@ -101,20 +147,6 @@
       "allowedVersions": {
         "eslint": "*"
       }
-    }
-  },
-  "targets": {
-    "main": {
-      "context": "node",
-      "includeNodeModules": true,
-      "optimize": true,
-      "outputFormat": "commonjs"
-    },
-    "module": {
-      "context": "node",
-      "includeNodeModules": true,
-      "optimize": true,
-      "outputFormat": "esmodule"
     }
   }
 }

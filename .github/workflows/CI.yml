@@ -43,6 +43,10 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
       - name: Setup Pnpm
         uses: pnpm/action-setup@v2
         with:

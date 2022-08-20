@@ -26,7 +26,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "importHelpers": false,
-    "outDir": "./dist"
+    "outDir": "./dist/node"
   },
   "compileOnSave": false,
   "include": ["./src"]

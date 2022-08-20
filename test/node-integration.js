@@ -1,4 +1,4 @@
-const filePaths = require("../dist/index.js")
+const filePaths = require("../dist/node/index.js")
 const { name, normalizeTrim } = filePaths
 
 name("path/to/file.md")

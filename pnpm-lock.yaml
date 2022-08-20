@@ -23,8 +23,10 @@ importers:
       npm-check-updates: ^16.0.5
       npm-run-all2: ^6.0.1
       parcel: 2.6.2
+      path-browserify: ^1.0.1
       prettier: 2.7.1
       prettier-config-atomic: ^3.0.10
+      process: ^0.11.10
       readme-md-generator: ^1.0.0
       replace-ext: ^2.0.0
       shx: 0.3.4
@@ -38,6 +40,8 @@ importers:
     optionalDependencies:
       '@types/node': 18.6.3
       '@types/replace-ext': 2.0.0
+      path-browserify: 1.0.1
+      process: 0.11.10
     devDependencies:
       '@types/jest': 28.1.6
       cross-env: 7.0.3
@@ -520,8 +524,8 @@ packages:
       '@cspell/dict-docker': 1.1.1
       '@cspell/dict-dotnet': 2.0.1
       '@cspell/dict-elixir': 2.0.1
-      '@cspell/dict-en_us': 2.3.0
       '@cspell/dict-en-gb': 1.1.33
+      '@cspell/dict-en_us': 2.3.0
       '@cspell/dict-filetypes': 2.1.1
       '@cspell/dict-fonts': 2.0.1
       '@cspell/dict-fullstack': 2.0.6
@@ -6804,6 +6808,12 @@ packages:
       lines-and-columns: 1.2.4
     dev: true
 
+  /path-browserify/1.0.1:
+    resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /path-exists/3.0.0:
     resolution: {integrity: sha512-bpC7GYwiDYQ4wYLe+FA8lhRjhQCMcQGuSgGGqDkg/QerRWw9CmGRT0iSOVRSZJ29NMLZgIzqaljJ63oaL4NIJQ==}
     engines: {node: '>=4'}
@@ -6951,6 +6961,13 @@ packages:
     resolution: {integrity: sha512-Kcmo2FhfDTXdcbfDH76N7uBYHINxc/8GW7UAVuVP9I+Va3uHSerrnKV6dLooga/gh7GlgzuCCr/eoldnL1muGw==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dev: true
+
+  /process/0.11.10:
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
+    engines: {node: '>= 0.6.0'}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /progress/2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}

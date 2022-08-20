@@ -11,3 +11,5 @@ export * from "./add-sh-ext"
 export * from "./add-sh-relative-prefix"
 export * from "./remove-ext"
 export * from "./replace-ext"
+
+export * from "./is-path-inside"

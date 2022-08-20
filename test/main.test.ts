@@ -10,6 +10,7 @@ import {
   addExeExt,
   addShExt,
   addShRelativePrefix,
+  isPathInside,
 } from "../src"
 
 test("Node path", () => {
@@ -60,4 +61,11 @@ test("addShExt", () => {
 
 test("addShRelativePrefix", () => {
   expect(addShRelativePrefix("file-name")).toBe(process.platform === "win32" ? "file-name" : "./file-name")
+})
+
+test("isPathInside", () => {
+  expect(isPathInside("a/b/c", "a/b")).toBeTruthy()
+  expect(isPathInside("a/b/c", "x/y")).toBeFalsy()
+  expect(isPathInside("a/b/c", "a/b/c")).toBeFalsy()
+  expect(isPathInside("/Users/some/dev/aa", "/Users/some")).toBeTruthy()
 })

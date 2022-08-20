@@ -9,10 +9,8 @@ ignorePaths:
   - dist/
   - dev/cpp_vcpkg_project
 words:
-  - deno
-  - denoland
-  - addShExt
   - aarch
+  - addShExt
   - aminya
   - applellvm
   - bazel
@@ -29,6 +27,8 @@ words:
   - cpprc
   - Cpython
   - DCMAKE
+  - deno
+  - denoland
   - deps
   - devel
   - dyld
@@ -68,6 +68,8 @@ words:
   - pypy
   - setupcpp
   - setx
+  - Sindre
+  - Sorhus
   - Syuu
   - terserrc
   - tsbuildinfo

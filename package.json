@@ -49,7 +49,7 @@
       },
       "optimize": true,
       "includeNodeModules": true,
-      "outputFormat": "global",
+      "outputFormat": "esmodule",
       "isLibrary": true
     },
     "module.browser": {

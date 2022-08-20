@@ -9,6 +9,8 @@ ignorePaths:
   - dist/
   - dev/cpp_vcpkg_project
 words:
+  - deno
+  - denoland
   - addShExt
   - aarch
   - aminya

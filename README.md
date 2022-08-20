@@ -8,13 +8,12 @@
   <a href="https://www.npmjs.com/package/patha" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/patha.svg">
   </a>
-  <img src="https://img.shields.io/badge/node-%3E%3D12.x-blue.svg" />
   <a href="#" target="_blank">
     <img alt="License: Apache--2.0" src="https://img.shields.io/badge/License-Apache--2.0-yellow.svg" />
   </a>
 </p>
 
-> File paths library. All you need to work with paths. drop-in replacement for Nodejs 'path'. Tiny and tree-shakable.
+> File paths library. All you need to work with paths. Tiny drop-in replacement for 'path'. Works in Node, Browser, and Deno.
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 

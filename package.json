@@ -7,15 +7,14 @@
   "license": "Apache-2.0",
   "author": "Amin Yahyaabadi",
   "exports": {
-    "import": "./dist/node/index.mjs",
-    "require": "./dist/node/index.js"
+    "import": "./dist/index.node.mjs",
+    "require": "./dist/index.node.cjs"
   },
-  "main": "./dist/node/index.js",
-  "module": "./dist/node/index.mjs",
-  "main.browser": "./dist/browser/index.js",
-  "module.browser": "./dist/browser/index.mjs",
-  "main.deno": "./dist/deno/index.js",
-  "module.deno": "./dist/deno/index.mjs",
+  "main": "./dist/index.node.cjs",
+  "module": "./dist/index.node.mjs",
+  "main.browser": "./dist/index.browser.legacy.js",
+  "module.browser": "./dist/index.browser.mjs",
+  "module.deno": "./dist/index.deno.mjs",
   "source": "./src/index.ts",
   "browser": {
     "path": "./node_modules/path-browserify",
@@ -23,6 +22,7 @@
   },
   "targets": {
     "main": {
+      "source": "./src/index-node.ts",
       "context": "node",
       "engines": {
         "node": ">=12.x"
@@ -30,9 +30,10 @@
       "optimize": true,
       "includeNodeModules": true,
       "outputFormat": "commonjs",
-      "isLibrary": false
+      "isLibrary": true
     },
     "module": {
+      "source": "./src/index.ts",
       "context": "node",
       "engines": {
         "node": ">=16.x"
@@ -40,9 +41,10 @@
       "optimize": true,
       "includeNodeModules": true,
       "outputFormat": "esmodule",
-      "isLibrary": false
+      "isLibrary": true
     },
     "main.browser": {
+      "source": "./src/index-browser.ts",
       "context": "browser",
       "engines": {
         "browsers": "> 0.5%"
@@ -53,6 +55,7 @@
       "isLibrary": true
     },
     "module.browser": {
+      "source": "./src/index-browser.ts",
       "context": "browser",
       "engines": {
         "browsers": "last 2 versions"
@@ -71,12 +74,13 @@
     "LICENSE_dependencies.txt"
   ],
   "scripts": {
-    "build": "run-s clean build.tsc.esm build.parcel",
-    "build.parcel": "shx rm -rf dist/node/index.js* && cross-env NODE_ENV=production parcel build --target main --target module --target main.browser --target module.browser && cp -r ./dist/browser/*.mjs* ./dist/deno",
-    "build.tsc.cjs": "tsc -p ./tsconfig.cjs.json",
-    "build.tsc.esm": "tsc -p ./tsconfig.json && node ./dev/tsc-mjs.mjs",
+    "build": "run-s clean build.tsc build.parcel build.types build.deno",
+    "build.parcel": "shx rm -rf dist/node/index.js* && cross-env NODE_ENV=production parcel build --target main --target module --target main.browser --target module.browser",
+    "build.types": "shx cp ./dist/index.d.ts ./dist/index.node.d.ts && shx cp ./dist/index.d.ts ./dist/index.node.d.cts && shx cp ./dist/index.d.ts ./dist/browser.d.ts && shx cp ./dist/index.d.ts ./dist/index.deno.d.ts",
+    "build.deno": "shx cp ./dist/index.browser.mjs ./dist/index.deno.mjs && shx cp ./dist/index.browser.mjs.map ./dist/index.deno.mjs.map",
+    "build.tsc": "tsc -p ./tsconfig.json && node ./dev/tsc-mjs.mjs",
     "bump": "ncu -u -x execa,numerous && pnpm update",
-    "clean": "shx rm -rf dist && shx mkdir ./dist && shx mkdir ./dist/deno",
+    "clean": "shx rm -rf dist && shx mkdir ./dist",
     "dev": "cross-env NODE_ENV=development parcel watch",
     "docs": "shx rm -rf ./README.md && pnpm exec readme --path ./dev/docs/readme.md -y && pnpm exec ts-readme --header-depth 3 && pnpm run format",
     "format": "run-s lint.prettier",
@@ -85,8 +89,10 @@
     "lint.eslint": "eslint **/*.{ts,tsx,js,jsx,cjs,mjs,json,yaml} --no-error-on-unmatched-pattern --cache --cache-location ./.cache/eslint/ --fix",
     "lint.prettier": "prettier --write .",
     "prepare": "run-s build",
-    "test": "run-p --continue-on-error test.lint test.unit test.integration",
-    "test.integration": "run-s build && node ./test/node-integration.mjs && node ./test/node-integration.js && deno run ./test/deno-integration.ts",
+    "test": "run-s build && run-p --continue-on-error --aggregate-output test.lint test.unit test.integration.node.js test.integration.node.mjs test.integration.deno",
+    "test.integration.node.js": "node ./test/node-integration.js",
+    "test.integration.node.mjs": "node ./test/node-integration.mjs",
+    "test.integration.deno": "deno run ./test/deno-integration.ts",
     "test.lint": "run-p --aggregate-output --continue-on-error lint.cspell test.lint.eslint test.lint.prettier",
     "test.lint.eslint": "eslint **/*.{ts,tsx,js,jsx,cjs,mjs,json,yaml} --no-error-on-unmatched-pattern --cache --cache-location ./.cache/eslint/",
     "test.lint.prettier": "prettier . --check",

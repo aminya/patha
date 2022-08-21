@@ -40,6 +40,7 @@ words:
   - ghes
   - Graphviz
   - isci
+  - ispathinside
   - isroot
   - kcov
   - LDFLAGS

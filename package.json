@@ -1,6 +1,6 @@
 {
   "name": "patha",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "File paths library. All you need to work with paths. Tiny drop-in replacement for 'path'. Works in Node, Browser, and Deno.",
   "homepage": "https://github.com/aminya/patha",
   "repository": "https://github.com/aminya/patha",

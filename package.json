@@ -23,7 +23,7 @@
   },
   "targets": {
     "main": {
-      "source": "./src/index.cjs.ts",
+      "source": "./src/index.cjs",
       "context": "node",
       "engines": {
         "node": ">=12.x"

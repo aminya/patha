@@ -22,7 +22,7 @@
   },
   "targets": {
     "main": {
-      "source": "./src/index-cjs.cjs",
+      "source": "./src/index-node.cjs",
       "context": "node",
       "engines": {
         "node": ">=12.x"
@@ -44,7 +44,7 @@
       "isLibrary": false
     },
     "main.browser": {
-      "source": "./src/index.ts",
+      "source": "./src/index-browser.ts",
       "context": "browser",
       "engines": {
         "browsers": "> 0.5%"
@@ -55,7 +55,7 @@
       "isLibrary": true
     },
     "module.browser": {
-      "source": "./src/index.ts",
+      "source": "./src/index-browser.ts",
       "context": "browser",
       "engines": {
         "browsers": "last 2 versions"

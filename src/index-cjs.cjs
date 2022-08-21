@@ -1,4 +1,4 @@
-module.exports = require("./path-cjs.cjs")
+module.exports = require("path")
 
 export * from "./name"
 

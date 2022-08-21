@@ -30,6 +30,7 @@
   - [`normalizeTrim` (function)](#normalizetrim-function)
   - [`removeExt` (function)](#removeext-function)
   - [`replaceExt` (function)](#replaceext-function)
+  - [`isPathInside` (function)](#ispathinside-function)
 - [🤝 Contributing](#contributing)
 
 <!-- /code_chunk_output -->
@@ -232,6 +233,37 @@ Does not replace the extension if path is not a string or is empty.
 import { replaceExt } from "patha"
 
 replaceExt("path/to/file.md", ".html") // gives "path/to/file.html"
+```
+
+### `isPathInside` (function)
+
+Check if a path is inside another path.
+
+Note that relative paths are resolved against `process.cwd()` to make them absolute.
+
+This function does not check if the paths exist and it only works with strings.
+
+**Parameters:**
+
+- childPath (`string`)
+- parentPath (`string`)
+
+**returns:** boolean
+
+```js
+import { isPathInside } from "patha"
+
+isPathInside("a/b/c", "a/b")
+//=> true
+
+isPathInside("a/b/c", "x/y")
+//=> false
+
+isPathInside("a/b/c", "a/b/c")
+//=> false
+
+isPathInside("/Users/some/dev/aa", "/Users/some")
+//=> true
 ```
 
 <!-- INSERT GENERATED DOCS END -->

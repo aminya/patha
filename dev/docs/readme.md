@@ -50,6 +50,7 @@
 
 - [Install](#install)
 - [Usage](#usage)
+- [API](#api)
 - [🤝 Contributing](#contributing)
 
 <!-- /code_chunk_output -->
@@ -63,6 +64,44 @@ npm install --save <%= projectName %>
 `patha` is tiny and treeshakable.
 
 ## Usage
+
+Automatic (depends on your build system)
+
+```js
+import * as patha from "patha"
+```
+
+Node
+
+```js
+import * as patha from "patha/dist/index.node.mjs"
+```
+
+Node CJS
+
+```js
+const patha = require("patha/dist/index.node.cjs")
+```
+
+Browser
+
+```js
+import * as patha from "patha/dist/index.browser.mjs"
+```
+
+Browser Legacy
+
+```js
+import * as patha from "patha/dist/index.browser.legacy.js"
+```
+
+Deno
+
+```js
+import * as patha from "patha/dist/index.deno.mjs"
+```
+
+## API
 
 `patha` is a drop-replacement for `path`, which is explained in [the Nodejs documentation](https://nodejs.org/api/path.html).
 

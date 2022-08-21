@@ -71,12 +71,14 @@
     "LICENSE_dependencies.txt"
   ],
   "scripts": {
-    "build": "run-s clean build.tsc.esm build.parcel",
-    "build.parcel": "shx rm -rf dist/node/index.js* && cross-env NODE_ENV=production parcel build --target main --target module --target main.browser --target module.browser && cp -r ./dist/browser/*.mjs* ./dist/deno",
+    "build": "run-s clean build.tsc.esm build.parcel build.types build.deno",
+    "build.parcel": "shx rm -rf dist/node/index.js* && cross-env NODE_ENV=production parcel build --target main --target module --target main.browser --target module.browser",
+    "build.types": "shx cp ./dist/node/index.d.ts ./dist/browser",
+    "build.deno": "shx mkdir ./dist/deno && shx cp -r ./dist/browser/* ./dist/deno",
     "build.tsc.cjs": "tsc -p ./tsconfig.cjs.json",
     "build.tsc.esm": "tsc -p ./tsconfig.json && node ./dev/tsc-mjs.mjs",
     "bump": "ncu -u -x execa,numerous && pnpm update",
-    "clean": "shx rm -rf dist && shx mkdir ./dist && shx mkdir ./dist/deno",
+    "clean": "shx rm -rf dist && shx mkdir ./dist",
     "dev": "cross-env NODE_ENV=development parcel watch",
     "docs": "shx rm -rf ./README.md && pnpm exec readme --path ./dev/docs/readme.md -y && pnpm exec ts-readme --header-depth 3 && pnpm run format",
     "format": "run-s lint.prettier",

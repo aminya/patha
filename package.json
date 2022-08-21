@@ -22,7 +22,7 @@
   },
   "targets": {
     "main": {
-      "source": "./src/index-node.cjs",
+      "source": "./src/index-node.ts",
       "context": "node",
       "engines": {
         "node": ">=12.x"
@@ -30,7 +30,7 @@
       "optimize": true,
       "includeNodeModules": true,
       "outputFormat": "commonjs",
-      "isLibrary": false
+      "isLibrary": true
     },
     "module": {
       "source": "./src/index.ts",
@@ -41,7 +41,7 @@
       "optimize": true,
       "includeNodeModules": true,
       "outputFormat": "esmodule",
-      "isLibrary": false
+      "isLibrary": true
     },
     "main.browser": {
       "source": "./src/index-browser.ts",

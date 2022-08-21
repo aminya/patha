@@ -7,15 +7,14 @@
   "license": "Apache-2.0",
   "author": "Amin Yahyaabadi",
   "exports": {
-    "import": "./dist/node/index.mjs",
-    "require": "./dist/node/index.js"
+    "import": "./dist/index.node.mjs",
+    "require": "./dist/index.node.cjs"
   },
-  "main": "./dist/node/index.js",
-  "module": "./dist/node/index.mjs",
-  "main.browser": "./dist/browser/index.js",
-  "module.browser": "./dist/browser/index.mjs",
-  "main.deno": "./dist/deno/index.js",
-  "module.deno": "./dist/deno/index.mjs",
+  "main": "./dist/index.node.cjs",
+  "module": "./dist/index.node.mjs",
+  "main.browser": "./dist/index.browser.js",
+  "module.browser": "./dist/index.browser.mjs",
+  "module.deno": "./dist/index.deno.mjs",
   "source": "./src/index.ts",
   "browser": {
     "path": "./node_modules/path-browserify",
@@ -23,7 +22,7 @@
   },
   "targets": {
     "main": {
-      "source": "./src/index.cjs",
+      "source": "./src/index-cjs.cjs",
       "context": "node",
       "engines": {
         "node": ">=12.x"
@@ -75,12 +74,11 @@
     "LICENSE_dependencies.txt"
   ],
   "scripts": {
-    "build": "run-s clean build.tsc.esm build.parcel build.types build.deno",
+    "build": "run-s clean build.tsc build.parcel build.types build.deno",
     "build.parcel": "shx rm -rf dist/node/index.js* && cross-env NODE_ENV=production parcel build --target main --target module --target main.browser --target module.browser",
-    "build.types": "shx cp ./dist/node/index.d.ts ./dist/browser",
-    "build.deno": "shx mkdir ./dist/deno && shx cp -r ./dist/browser/* ./dist/deno",
-    "build.tsc.cjs": "tsc -p ./tsconfig.cjs.json",
-    "build.tsc.esm": "tsc -p ./tsconfig.json && node ./dev/tsc-mjs.mjs",
+    "build.types": "shx cp ./dist/index.d.ts ./dist/index.node.d.ts && shx cp ./dist/index.d.ts ./dist/index.node.d.cts && shx cp ./dist/index.d.ts ./dist/browser.d.ts && shx cp ./dist/index.d.ts ./dist/index.deno.d.ts",
+    "build.deno": "shx cp ./dist/index.browser.mjs ./dist/index.deno.mjs && shx cp ./dist/index.browser.mjs.map ./dist/index.deno.mjs.map",
+    "build.tsc": "tsc -p ./tsconfig.json && node ./dev/tsc-mjs.mjs",
     "bump": "ncu -u -x execa,numerous && pnpm update",
     "clean": "shx rm -rf dist && shx mkdir ./dist",
     "dev": "cross-env NODE_ENV=development parcel watch",

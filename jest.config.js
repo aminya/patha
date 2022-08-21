@@ -6,7 +6,7 @@ module.exports = {
   testMatch: ["**/*.test.ts"],
   testPathIgnorePatterns: [],
   // coverage
-  collectCoverageFrom: ["src/**/*.{ts,tsx}"],
-  coveragePathIgnorePatterns: ["assets", ".css.d.ts"],
+  collectCoverageFrom: ["src/**/*.{ts,mjs,cjs}"],
+  coveragePathIgnorePatterns: ["assets"],
   verbose: true,
 }

@@ -51,7 +51,7 @@
       },
       "optimize": true,
       "includeNodeModules": true,
-      "outputFormat": "global",
+      "outputFormat": "esmodule",
       "isLibrary": true
     },
     "module.browser": {
@@ -101,6 +101,7 @@
   "prettier": "prettier-config-atomic",
   "dependencies": {
     "escape-string-regexp": "^5.0.0",
+    "is-path-inside": "^4.0.0",
     "replace-ext": "^2.0.0"
   },
   "devDependencies": {

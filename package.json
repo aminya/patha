@@ -28,7 +28,10 @@
         "node": ">=12.x"
       },
       "optimize": true,
-      "includeNodeModules": true,
+      "includeNodeModules": {
+        "escape-string-regexp": true,
+        "replace-ext": false
+      },
       "outputFormat": "commonjs",
       "isLibrary": true
     },
@@ -39,7 +42,7 @@
         "node": ">=16.x"
       },
       "optimize": true,
-      "includeNodeModules": true,
+      "includeNodeModules": false,
       "outputFormat": "esmodule",
       "isLibrary": true
     },

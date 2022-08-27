@@ -39,7 +39,7 @@
         "node": ">=16.x"
       },
       "optimize": true,
-      "includeNodeModules": true,
+      "includeNodeModules": false,
       "outputFormat": "esmodule",
       "isLibrary": true
     },

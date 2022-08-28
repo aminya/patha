@@ -20,6 +20,9 @@
     "path": "./node_modules/path-browserify",
     "process": "./node_modules/process"
   },
+  "alias": {
+    "admina": "admina/src/index.ts"
+  },
   "targets": {
     "main": {
       "source": "./src/index-node.ts",
@@ -103,6 +106,7 @@
   },
   "prettier": "prettier-config-atomic",
   "dependencies": {
+    "admina": "^0.1.2",
     "escape-string-regexp": "^5.0.0",
     "replace-ext": "^2.0.0"
   },

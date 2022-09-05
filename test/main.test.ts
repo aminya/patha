@@ -11,6 +11,7 @@ import {
   addShExt,
   addShRelativePrefix,
   isPathInside,
+  untildify,
 } from "../src"
 
 test("Node path", () => {
@@ -68,4 +69,15 @@ test("isPathInside", () => {
   expect(isPathInside("a/b/c", "x/y")).toBeFalsy()
   expect(isPathInside("a/b/c", "a/b/c")).toBeFalsy()
   expect(isPathInside("/Users/some/dev/aa", "/Users/some")).toBeTruthy()
+})
+
+test("untildify", () => {
+  const out = untildify("~/sss")
+  if (process.platform === "linux") {
+    expect(out.match(/home\/.*\/sss/)).toBeTruthy()
+  } else if (process.platform === "darwin") {
+    expect(out.match(/Users\/.*\/sss/)).toBeTruthy()
+  } else if (process.platform === "win32") {
+    expect(out.match(/.*\/Users\/.*\/sss/)).toBeTruthy()
+  }
 })

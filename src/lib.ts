@@ -11,3 +11,6 @@ export * from "./remove-ext"
 export * from "./replace-ext"
 
 export * from "./is-path-inside"
+
+export * from "./home-directory"
+export * from "./untildify"

@@ -1,4 +1,4 @@
-import { relative, resolve, sep } from "path"
+import { default as isPathInsideOrig } from "is-path-inside"
 
 /**
  * Check if a path is inside another path.
@@ -26,9 +26,5 @@ import { relative, resolve, sep } from "path"
  * ```
  */
 export function isPathInside(childPath: string, parentPath: string): boolean {
-  // copied from is-path-inside because the package uses node:path that can't be bundled for the browser
-
-  const relation = relative(parentPath, childPath)
-
-  return Boolean(relation && relation !== ".." && !relation.startsWith(`..${sep}`) && relation !== resolve(childPath))
+  return isPathInsideOrig(childPath, parentPath)
 }

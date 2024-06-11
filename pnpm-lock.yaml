@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 overrides:
   eslint: ^8.23.0
-  prettier: 2.7.1
+  prettier: 3.3.2
   lru-cache: 7.8.1
   core-js: '*'
   babel-eslint: npm:@babel/eslint-parser
@@ -21,7 +21,7 @@ specifiers:
   npm-run-all2: ^6.0.2
   parcel: 2.12.0
   path-browserify: ^1.0.1
-  prettier: 2.7.1
+  prettier: 3.3.2
   prettier-config-atomic: ^4.0.0
   process: ^0.11.10
   readme-md-generator: ^1.0.0
@@ -52,7 +52,7 @@ devDependencies:
   npm-check-updates: 16.14.20
   npm-run-all2: 6.2.0
   parcel: 2.12.0
-  prettier: 2.7.1
+  prettier: 3.3.2
   prettier-config-atomic: 4.0.0
   readme-md-generator: 1.0.0
   shx: 0.3.4
@@ -1497,14 +1497,14 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.6.0
+      semver: 7.6.2
     dev: true
 
   /@npmcli/fs/3.1.0:
     resolution: {integrity: sha512-7kZUAaLscfgbwBQRbvdMYaZOWyMEcPTH/tJjnyAWJ/dvvs9Ef+CERx/qJb9GExJpl1qipaDGn7KqHnFGGixd0w==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      semver: 7.6.0
+      semver: 7.6.2
     dev: true
 
   /@npmcli/git/4.1.0:
@@ -1865,30 +1865,10 @@ packages:
       '@parcel/fs': 2.12.0_@parcel+core@2.12.0
       '@parcel/logger': 2.12.0
       '@parcel/node-resolver-core': 3.3.0_@parcel+core@2.12.0
-      '@parcel/types': 2.12.0
-      '@parcel/utils': 2.12.0
-      '@parcel/workers': 2.12.0_@parcel+core@2.12.0
-      '@swc/core': 1.5.27
-      semver: 7.6.0
-    transitivePeerDependencies:
-      - '@swc/helpers'
-    dev: true
-
-  /@parcel/package-manager/2.12.0_mh6kpkiizruvfogyrvbyvshe3m:
-    resolution: {integrity: sha512-0nvAezcjPx9FT+hIL+LS1jb0aohwLZXct7jAh7i0MLMtehOi0z1Sau+QpgMlA9rfEZZ1LIeFdnZZwqSy7Ccspw==}
-    engines: {node: '>= 12.0.0'}
-    peerDependencies:
-      '@parcel/core': ^2.12.0
-    dependencies:
-      '@parcel/core': 2.12.0
-      '@parcel/diagnostic': 2.12.0
-      '@parcel/fs': 2.12.0_@parcel+core@2.12.0
-      '@parcel/logger': 2.12.0
-      '@parcel/node-resolver-core': 3.3.0_@parcel+core@2.12.0
       '@parcel/types': 2.12.0_@parcel+core@2.12.0
       '@parcel/utils': 2.12.0
       '@parcel/workers': 2.12.0_@parcel+core@2.12.0
-      '@swc/core': 1.5.27_@swc+helpers@0.5.11
+      '@swc/core': 1.5.27
       semver: 7.6.0
     transitivePeerDependencies:
       - '@swc/helpers'
@@ -1978,16 +1958,6 @@ packages:
     engines: {node: '>= 12.0.0'}
     dependencies:
       '@parcel/types': 2.12.0_@parcel+core@2.12.0
-    transitivePeerDependencies:
-      - '@parcel/core'
-      - '@swc/helpers'
-    dev: true
-
-  /@parcel/plugin/2.12.0_mh6kpkiizruvfogyrvbyvshe3m:
-    resolution: {integrity: sha512-nc/uRA8DiMoe4neBbzV6kDndh/58a4wQuGKw5oEoIwBCHUvE2W8ZFSu7ollSXUGRzfacTt4NdY8TwS73ScWZ+g==}
-    engines: {node: '>= 12.0.0'}
-    dependencies:
-      '@parcel/types': 2.12.0_mh6kpkiizruvfogyrvbyvshe3m
     transitivePeerDependencies:
       - '@parcel/core'
       - '@swc/helpers'
@@ -2186,7 +2156,7 @@ packages:
     dependencies:
       '@parcel/core': 2.12.0
       '@parcel/diagnostic': 2.12.0
-      '@parcel/plugin': 2.12.0_mh6kpkiizruvfogyrvbyvshe3m
+      '@parcel/plugin': 2.12.0_@parcel+core@2.12.0
       '@parcel/rust': 2.12.0
       '@parcel/source-map': 2.1.1
       '@parcel/utils': 2.12.0
@@ -2300,21 +2270,6 @@ packages:
       '@parcel/diagnostic': 2.12.0
       '@parcel/fs': 2.12.0_@parcel+core@2.12.0
       '@parcel/package-manager': 2.12.0_@parcel+core@2.12.0
-      '@parcel/source-map': 2.1.1
-      '@parcel/workers': 2.12.0_@parcel+core@2.12.0
-      utility-types: 3.10.0
-    transitivePeerDependencies:
-      - '@parcel/core'
-      - '@swc/helpers'
-    dev: true
-
-  /@parcel/types/2.12.0_mh6kpkiizruvfogyrvbyvshe3m:
-    resolution: {integrity: sha512-8zAFiYNCwNTQcglIObyNwKfRYQK5ELlL13GuBOrSMxueUiI5ylgsGbTS1N7J3dAGZixHO8KhHGv5a71FILn9rQ==}
-    dependencies:
-      '@parcel/cache': 2.12.0_@parcel+core@2.12.0
-      '@parcel/diagnostic': 2.12.0
-      '@parcel/fs': 2.12.0_@parcel+core@2.12.0
-      '@parcel/package-manager': 2.12.0_mh6kpkiizruvfogyrvbyvshe3m
       '@parcel/source-map': 2.1.1
       '@parcel/workers': 2.12.0_@parcel+core@2.12.0
       utility-types: 3.10.0
@@ -2478,11 +2433,9 @@ packages:
       '@parcel/diagnostic': 2.12.0
       '@parcel/logger': 2.12.0
       '@parcel/profiler': 2.12.0
-      '@parcel/types': 2.12.0_@parcel+core@2.12.0
+      '@parcel/types': 2.12.0
       '@parcel/utils': 2.12.0
       nullthrows: 1.1.1
-    transitivePeerDependencies:
-      - '@swc/helpers'
     dev: true
 
   /@pkgjs/parseargs/0.11.0:
@@ -2673,32 +2626,6 @@ packages:
         optional: true
     dependencies:
       '@swc/counter': 0.1.3
-      '@swc/types': 0.1.8
-    optionalDependencies:
-      '@swc/core-darwin-arm64': 1.5.27
-      '@swc/core-darwin-x64': 1.5.27
-      '@swc/core-linux-arm-gnueabihf': 1.5.27
-      '@swc/core-linux-arm64-gnu': 1.5.27
-      '@swc/core-linux-arm64-musl': 1.5.27
-      '@swc/core-linux-x64-gnu': 1.5.27
-      '@swc/core-linux-x64-musl': 1.5.27
-      '@swc/core-win32-arm64-msvc': 1.5.27
-      '@swc/core-win32-ia32-msvc': 1.5.27
-      '@swc/core-win32-x64-msvc': 1.5.27
-    dev: true
-
-  /@swc/core/1.5.27_@swc+helpers@0.5.11:
-    resolution: {integrity: sha512-HmSSCBoUSRDFAd8aEB+WILkCofIp1c2OU6ZJWu1aCt6pijwQSkA4y51CTBcdvyy/+zX1W3cic7alfdhmQxxeEQ==}
-    engines: {node: '>=10'}
-    requiresBuild: true
-    peerDependencies:
-      '@swc/helpers': '*'
-    peerDependenciesMeta:
-      '@swc/helpers':
-        optional: true
-    dependencies:
-      '@swc/counter': 0.1.3
-      '@swc/helpers': 0.5.11
       '@swc/types': 0.1.8
     optionalDependencies:
       '@swc/core-darwin-arm64': 1.5.27
@@ -2998,7 +2925,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.6.0
+      semver: 7.6.2
       tsutils: 3.21.0_typescript@4.8.2
       typescript: 4.8.2
     transitivePeerDependencies:
@@ -3446,7 +3373,7 @@ packages:
   /builtins/5.1.0:
     resolution: {integrity: sha512-SW9lzGTLvWTP1AY8xeAMZimqDrIaSdLQUcVr9DMef51niJ022Ri87SwRRKYm4A6iHfkPaiVUu/Duw2Wc4J7kKg==}
     dependencies:
-      semver: 7.6.0
+      semver: 7.6.2
     dev: true
 
   /cacache/16.1.3:
@@ -4523,7 +4450,7 @@ packages:
       eslint-plugin-optimize-regex: 1.2.1
       eslint-plugin-react: 7.31.1_eslint@8.57.0
       eslint-plugin-yaml: 0.5.0
-      prettier: 2.7.1
+      prettier: 3.3.2
       read-pkg-up: 7.0.1
       semver: 7.3.7
       typescript: 4.8.2
@@ -5974,7 +5901,7 @@ packages:
       '@babel/parser': 7.24.7
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.0
-      semver: 7.6.0
+      semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7326,7 +7253,7 @@ packages:
       nopt: 6.0.0
       npmlog: 6.0.2
       rimraf: 3.0.2
-      semver: 7.6.0
+      semver: 7.6.2
       tar: 6.2.1
       which: 2.0.2
     transitivePeerDependencies:
@@ -7369,7 +7296,7 @@ packages:
     dependencies:
       hosted-git-info: 6.1.1
       is-core-module: 2.13.1
-      semver: 7.6.0
+      semver: 7.6.2
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -7437,7 +7364,7 @@ packages:
     resolution: {integrity: sha512-W29RiK/xtpCGqn6f3ixfRYGk+zRyr+Ew9F2E20BfXxT5/euLdA/Nm7fO7OeTGuAmTs30cpgInyJ0cYe708YTZw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      semver: 7.6.0
+      semver: 7.6.2
     dev: true
 
   /npm-normalize-package-bin/3.0.1:
@@ -7686,7 +7613,7 @@ packages:
       got: 12.6.1
       registry-auth-token: 5.0.2
       registry-url: 6.0.1
-      semver: 7.6.0
+      semver: 7.6.2
     dev: true
 
   /pacote/15.2.0:
@@ -7898,15 +7825,15 @@ packages:
   /prettier-config-atomic/4.0.0:
     resolution: {integrity: sha512-KOMbSvc9EASrNrzEJ2X6h0eN0Sg9QZDO3Pg3KTmiLBz5N0cumy9k8MOMtB22Eyd0lxe9c+M+L5Ynjvlnwx7isA==}
     dependencies:
-      prettier: 2.7.1
-      prettier-plugin-jsdoc: 1.3.0_prettier@2.7.1
-      prettier-plugin-packagejson: 2.5.0_prettier@2.7.1
+      prettier: 3.3.2
+      prettier-plugin-jsdoc: 1.3.0_prettier@3.3.2
+      prettier-plugin-packagejson: 2.5.0_prettier@3.3.2
       sort-package-json: github.com/aminya/sort-package-json/076051b58be7b198732d1ce2b9a415ccd0c63a97
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /prettier-plugin-jsdoc/1.3.0_prettier@2.7.1:
+  /prettier-plugin-jsdoc/1.3.0_prettier@3.3.2:
     resolution: {integrity: sha512-cQm8xIa0fN9ieJFMXACQd6JPycl+8ouOijAqUqu44EF/s4fXL3Wi9sKXuEaodsEWgCN42Xby/bNhqgM1iWx4uw==}
     engines: {node: '>=14.13.1 || >=16.0.0'}
     peerDependencies:
@@ -7915,12 +7842,12 @@ packages:
       binary-searching: 2.0.5
       comment-parser: 1.4.1
       mdast-util-from-markdown: 2.0.1
-      prettier: 2.7.1
+      prettier: 3.3.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /prettier-plugin-packagejson/2.5.0_prettier@2.7.1:
+  /prettier-plugin-packagejson/2.5.0_prettier@3.3.2:
     resolution: {integrity: sha512-6XkH3rpin5QEQodBSVNg+rBo4r91g/1mCaRwS1YGdQJZ6jwqrg2UchBsIG9tpS1yK1kNBvOt84OILsX8uHzBGg==}
     peerDependencies:
       prettier: '>= 1.16.0'
@@ -7928,14 +7855,14 @@ packages:
       prettier:
         optional: true
     dependencies:
-      prettier: 2.7.1
+      prettier: 3.3.2
       sort-package-json: 2.10.0
       synckit: 0.9.0
     dev: true
 
-  /prettier/2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
-    engines: {node: '>=10.13.0'}
+  /prettier/3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
@@ -8516,7 +8443,7 @@ packages:
       git-hooks-list: 3.1.0
       globby: 13.2.2
       is-plain-obj: 4.1.0
-      semver: 7.6.0
+      semver: 7.6.2
       sort-object-keys: 1.1.3
     dev: true
 
@@ -8893,7 +8820,7 @@ packages:
     dependencies:
       command-line-application: 0.9.6
       fast-glob: 3.2.11
-      prettier: 2.7.1
+      prettier: 3.3.2
       typescript: 5.4.5
     dev: true
 

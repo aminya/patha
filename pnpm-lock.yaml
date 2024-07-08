@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 overrides:
   eslint: ^8.23.0
   prettier: 2.7.1
-  lru-cache: 7.8.1
+  lru-cache: 10.4.0
   core-js: '*'
   babel-eslint: npm:@babel/eslint-parser
 
@@ -220,7 +220,7 @@ packages:
       '@babel/compat-data': 7.24.7
       '@babel/helper-validator-option': 7.24.7
       browserslist: 4.23.1
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
       semver: 6.3.1
     dev: true
 
@@ -1512,7 +1512,7 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       '@npmcli/promise-spawn': 6.0.2
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
       npm-pick-manifest: 8.0.2
       proc-log: 3.0.0
       promise-inflight: 1.0.1
@@ -1865,30 +1865,10 @@ packages:
       '@parcel/fs': 2.12.0_@parcel+core@2.12.0
       '@parcel/logger': 2.12.0
       '@parcel/node-resolver-core': 3.3.0_@parcel+core@2.12.0
-      '@parcel/types': 2.12.0
-      '@parcel/utils': 2.12.0
-      '@parcel/workers': 2.12.0_@parcel+core@2.12.0
-      '@swc/core': 1.5.27
-      semver: 7.6.0
-    transitivePeerDependencies:
-      - '@swc/helpers'
-    dev: true
-
-  /@parcel/package-manager/2.12.0_mh6kpkiizruvfogyrvbyvshe3m:
-    resolution: {integrity: sha512-0nvAezcjPx9FT+hIL+LS1jb0aohwLZXct7jAh7i0MLMtehOi0z1Sau+QpgMlA9rfEZZ1LIeFdnZZwqSy7Ccspw==}
-    engines: {node: '>= 12.0.0'}
-    peerDependencies:
-      '@parcel/core': ^2.12.0
-    dependencies:
-      '@parcel/core': 2.12.0
-      '@parcel/diagnostic': 2.12.0
-      '@parcel/fs': 2.12.0_@parcel+core@2.12.0
-      '@parcel/logger': 2.12.0
-      '@parcel/node-resolver-core': 3.3.0_@parcel+core@2.12.0
       '@parcel/types': 2.12.0_@parcel+core@2.12.0
       '@parcel/utils': 2.12.0
       '@parcel/workers': 2.12.0_@parcel+core@2.12.0
-      '@swc/core': 1.5.27_@swc+helpers@0.5.11
+      '@swc/core': 1.5.27
       semver: 7.6.0
     transitivePeerDependencies:
       - '@swc/helpers'
@@ -1978,16 +1958,6 @@ packages:
     engines: {node: '>= 12.0.0'}
     dependencies:
       '@parcel/types': 2.12.0_@parcel+core@2.12.0
-    transitivePeerDependencies:
-      - '@parcel/core'
-      - '@swc/helpers'
-    dev: true
-
-  /@parcel/plugin/2.12.0_mh6kpkiizruvfogyrvbyvshe3m:
-    resolution: {integrity: sha512-nc/uRA8DiMoe4neBbzV6kDndh/58a4wQuGKw5oEoIwBCHUvE2W8ZFSu7ollSXUGRzfacTt4NdY8TwS73ScWZ+g==}
-    engines: {node: '>= 12.0.0'}
-    dependencies:
-      '@parcel/types': 2.12.0_mh6kpkiizruvfogyrvbyvshe3m
     transitivePeerDependencies:
       - '@parcel/core'
       - '@swc/helpers'
@@ -2186,7 +2156,7 @@ packages:
     dependencies:
       '@parcel/core': 2.12.0
       '@parcel/diagnostic': 2.12.0
-      '@parcel/plugin': 2.12.0_mh6kpkiizruvfogyrvbyvshe3m
+      '@parcel/plugin': 2.12.0_@parcel+core@2.12.0
       '@parcel/rust': 2.12.0
       '@parcel/source-map': 2.1.1
       '@parcel/utils': 2.12.0
@@ -2300,21 +2270,6 @@ packages:
       '@parcel/diagnostic': 2.12.0
       '@parcel/fs': 2.12.0_@parcel+core@2.12.0
       '@parcel/package-manager': 2.12.0_@parcel+core@2.12.0
-      '@parcel/source-map': 2.1.1
-      '@parcel/workers': 2.12.0_@parcel+core@2.12.0
-      utility-types: 3.10.0
-    transitivePeerDependencies:
-      - '@parcel/core'
-      - '@swc/helpers'
-    dev: true
-
-  /@parcel/types/2.12.0_mh6kpkiizruvfogyrvbyvshe3m:
-    resolution: {integrity: sha512-8zAFiYNCwNTQcglIObyNwKfRYQK5ELlL13GuBOrSMxueUiI5ylgsGbTS1N7J3dAGZixHO8KhHGv5a71FILn9rQ==}
-    dependencies:
-      '@parcel/cache': 2.12.0_@parcel+core@2.12.0
-      '@parcel/diagnostic': 2.12.0
-      '@parcel/fs': 2.12.0_@parcel+core@2.12.0
-      '@parcel/package-manager': 2.12.0_mh6kpkiizruvfogyrvbyvshe3m
       '@parcel/source-map': 2.1.1
       '@parcel/workers': 2.12.0_@parcel+core@2.12.0
       utility-types: 3.10.0
@@ -2478,11 +2433,9 @@ packages:
       '@parcel/diagnostic': 2.12.0
       '@parcel/logger': 2.12.0
       '@parcel/profiler': 2.12.0
-      '@parcel/types': 2.12.0_@parcel+core@2.12.0
+      '@parcel/types': 2.12.0
       '@parcel/utils': 2.12.0
       nullthrows: 1.1.1
-    transitivePeerDependencies:
-      - '@swc/helpers'
     dev: true
 
   /@pkgjs/parseargs/0.11.0:
@@ -2673,32 +2626,6 @@ packages:
         optional: true
     dependencies:
       '@swc/counter': 0.1.3
-      '@swc/types': 0.1.8
-    optionalDependencies:
-      '@swc/core-darwin-arm64': 1.5.27
-      '@swc/core-darwin-x64': 1.5.27
-      '@swc/core-linux-arm-gnueabihf': 1.5.27
-      '@swc/core-linux-arm64-gnu': 1.5.27
-      '@swc/core-linux-arm64-musl': 1.5.27
-      '@swc/core-linux-x64-gnu': 1.5.27
-      '@swc/core-linux-x64-musl': 1.5.27
-      '@swc/core-win32-arm64-msvc': 1.5.27
-      '@swc/core-win32-ia32-msvc': 1.5.27
-      '@swc/core-win32-x64-msvc': 1.5.27
-    dev: true
-
-  /@swc/core/1.5.27_@swc+helpers@0.5.11:
-    resolution: {integrity: sha512-HmSSCBoUSRDFAd8aEB+WILkCofIp1c2OU6ZJWu1aCt6pijwQSkA4y51CTBcdvyy/+zX1W3cic7alfdhmQxxeEQ==}
-    engines: {node: '>=10'}
-    requiresBuild: true
-    peerDependencies:
-      '@swc/helpers': '*'
-    peerDependenciesMeta:
-      '@swc/helpers':
-        optional: true
-    dependencies:
-      '@swc/counter': 0.1.3
-      '@swc/helpers': 0.5.11
       '@swc/types': 0.1.8
     optionalDependencies:
       '@swc/core-darwin-arm64': 1.5.27
@@ -3459,7 +3386,7 @@ packages:
       fs-minipass: 2.1.0
       glob: 8.1.0
       infer-owner: 1.0.4
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
       minipass: 3.3.6
       minipass-collect: 1.0.2
       minipass-flush: 1.0.5
@@ -3482,7 +3409,7 @@ packages:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.3
       glob: 10.3.12
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
       minipass: 7.0.4
       minipass-collect: 1.0.2
       minipass-flush: 1.0.5
@@ -5513,14 +5440,14 @@ packages:
     resolution: {integrity: sha512-xIcQYMnhcx2Nr4JTjsFmwwnr9vldugPy9uVm0o87bjqqWMv9GaqsTeT+i99wTl0mk1uLxJtHxLb8kymqTENQsw==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
     dev: true
 
   /hosted-git-info/6.1.1:
     resolution: {integrity: sha512-r0EI+HBMcXadMrugk0GCQ+6BQV39PiWAZVfq7oIckeGiN7sjRGyQxPdft3nQekFTCQbYxLBH+/axZMeH8UX6+w==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
     dev: true
 
   /html-escaper/2.0.2:
@@ -6781,9 +6708,9 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
-  /lru-cache/7.8.1:
-    resolution: {integrity: sha512-E1v547OCgJvbvevfjgK9sNKIVXO96NnsTsFPBlg4ZxjhsJSODoH9lk8Bm0OxvHNm6Vm5Yqkl/1fErDxhYL8Skg==}
-    engines: {node: '>=12'}
+  /lru-cache/10.4.0:
+    resolution: {integrity: sha512-bfJaPTuEiTYBu+ulDaeQ0F+uLmlfFkMgXj4cbwfuMSjgObGMzb55FMMbDvbRU0fAHZ4sLGkz2mKwcMg8Dvm8Ww==}
+    engines: {node: '>=18'}
     dev: true
 
   /make-dir/3.1.0:
@@ -6807,7 +6734,7 @@ packages:
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.1
       is-lambda: 1.0.1
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
       minipass: 3.3.6
       minipass-collect: 1.0.2
       minipass-fetch: 2.1.2
@@ -6832,7 +6759,7 @@ packages:
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.1
       is-lambda: 1.0.1
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
       minipass: 5.0.0
       minipass-fetch: 3.0.4
       minipass-flush: 1.0.5
@@ -7817,7 +7744,7 @@ packages:
     resolution: {integrity: sha512-7xTavNy5RQXnsjANvVvMkEjvloOinkAjv/Z6Ildz9v2RinZ4SBKTWFOVRbaF8p0vpHnyjV/UwNDdKuUv6M5qcA==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
       minipass: 7.0.4
     dev: true
 
@@ -8377,7 +8304,7 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
     dev: true
 
   /semver/7.6.0:
@@ -8385,7 +8312,7 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      lru-cache: 7.8.1
+      lru-cache: 10.4.0
     dev: true
 
   /semver/7.6.2:

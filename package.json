@@ -115,7 +115,7 @@
     "jest": "^29.0.0",
     "npm-check-updates": "^17.0.0",
     "npm-run-all2": "^7.0.0",
-    "parcel": "2.14.2",
+    "parcel": "2.14.3",
     "prettier": "3.5.3",
     "prettier-config-atomic": "^4.0.0",
     "readme-md-generator": "^1.0.0",

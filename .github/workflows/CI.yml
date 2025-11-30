@@ -45,7 +45,7 @@ jobs:
 
       - uses: denoland/setup-deno@v1
         with:
-          deno-version: v1.x
+          deno-version: 2.x
 
       - name: Setup Pnpm
         uses: pnpm/action-setup@v4

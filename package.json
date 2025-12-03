@@ -146,7 +146,7 @@
   ],
   "pnpm": {
     "overrides": {
-      "eslint": "^8.23.0",
+      "eslint": "^9.0.0",
       "prettier": "2.7.1",
       "lru-cache": "7.8.1",
       "core-js": "*",

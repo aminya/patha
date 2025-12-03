@@ -148,7 +148,7 @@
     "overrides": {
       "eslint": "^8.23.0",
       "prettier": "2.7.1",
-      "lru-cache": "7.8.1",
+      "lru-cache": "11.2.4",
       "core-js": "*",
       "babel-eslint": "npm:@babel/eslint-parser"
     },
